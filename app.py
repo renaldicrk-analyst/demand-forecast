@@ -68,7 +68,7 @@ filtered['trx_date_label'] = (
     + filtered['day_name_id']
     + ')')
 
-# PIVOT TABLE
+# PIVOT TABLE 
 table = filtered.pivot(
     index=['store', 'material'],
     columns='trx_date_label',
@@ -79,7 +79,7 @@ st.dataframe(
     table.fillna(0).astype(int),
     use_container_width=True)
 
-# DOWNLOAD EXCEL
+# DOWNLOAD EXCEL 
 def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='openpyxl') as writer:
